@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1yqr764yh6x0"]
+
+[ext_resource type="Texture2D" uid="uid://0hx6xu45sgb5" path="res://Assets/Planets/planet00.png" id="1_imoe1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg1lo"]
+atlas = ExtResource("1_imoe1")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_374eh"]
+atlas = ExtResource("1_imoe1")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxdr7"]
+atlas = ExtResource("1_imoe1")
+region = Rect2(320, 640, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlova"]
+atlas = ExtResource("1_imoe1")
+region = Rect2(640, 640, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqhlr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg1lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_374eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxdr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlova")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31rpu"]
+size = Vector2(79, 73)
+
+[node name="Storyline_Portal" type="Area2D"]
+position = Vector2(62, -56)
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-62.000004, 56.000004)
+scale = Vector2(0.26562497, 0.24774638)
+sprite_frames = SubResource("SpriteFrames_iqhlr")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-62, 56)
+shape = SubResource("RectangleShape2D_31rpu")

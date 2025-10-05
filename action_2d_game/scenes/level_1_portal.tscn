@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dymsxv6xmtog4"]
+
+[ext_resource type="Texture2D" uid="uid://dchqhelpjoax0" path="res://Assets/Planets/planet09.png" id="1_ihxra"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68bbf"]
+atlas = ExtResource("1_ihxra")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xjve"]
+atlas = ExtResource("1_ihxra")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gb61"]
+atlas = ExtResource("1_ihxra")
+region = Rect2(320, 640, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ooa2"]
+atlas = ExtResource("1_ihxra")
+region = Rect2(640, 640, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nbpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68bbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xjve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gb61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ooa2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dubqk"]
+size = Vector2(80, 81)
+
+[node name="Level1Portal" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.266, 0.266)
+sprite_frames = SubResource("SpriteFrames_1nbpj")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_dubqk")
